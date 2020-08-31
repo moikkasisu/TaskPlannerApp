@@ -12,13 +12,14 @@
 
     <title>Team#4 TaskPlannerApp</title>
   </head>
-   <body>
+
+  <body>
     
     <div class="container-fluid"></div>
     <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
-      <a href="#" class="navbar-brand"><img src="#" alt="team#4 pod1"></a>
+      <a href="#" class="navbar-brand"><img src="#" alt="Task Planner"></a>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search task name" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search task name" placeholder="Search Task" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     
@@ -26,76 +27,82 @@
      </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">To Do</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Done</a></li>
+        <li class="nav-item active"><a href="#homepage" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#to-do" class="nav-link">To Do</a></li>
+        <li class="nav-item"><a href="#in-progress" class="nav-link">In Progress</a></li>
+        <li class="nav-item"><a href="#review" class="nav-link">Review</a></li>
+        <li class="nav-item"><a href="#done" class="nav-link">Done</a></li>
       </ul>
       </div>
     </nav>
      
-     
-    <div class="mx-auto" style="width: 700px; padding-top: 80px">
-        <form>
-        <!--how to put in mobile phone top bar?  -->
+      
+    <h1>Form</h1>
+    <div class="mx-auto" style="width: 700px; padding-top: 20px">
+    <form action="/action_page.php">               
     <h2 style="text-align: center">Task Planner</h2> 
     
-    <div class="form-group">   
-    <div class="form-group row">
-      <div class="col">
-
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" for="inputGroup-sizing-default">Task Item List</span>
-          </div>
-          <input type="text" aria-label="list item" placeholder="Task Name"  class="form-control">
-          <input type="text" aria-label="status" placeholder="Status"  class="form-control">
-          <!-- how to put in a toggler for status change? -->
-          </div>
-           
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" for="inputGroup-sizing-default">Task Item List</span>
-            </div>
-            <input type="text" aria-label="list item" placeholder="Task Name"  class="form-control">
-            <input type="text" aria-label="status" placeholder="Status"  class="form-control">
-            <!-- how to put in a toggler for status change? -->
-            </div>
-          
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" for="inputGroup-sizing-default">Task Item List</span>
-              </div>
-              <input type="text" aria-label="list item" placeholder="Task Name"  class="form-control">
-              <input type="text" aria-label="status" placeholder="Status"  class="form-control">
-              <!-- how to put in a toggler for status change? -->
-              </div>          
-          
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" for="inputGroup-sizing-default">Task Item List</span>
-                </div>
-                <input type="text" aria-label="list item" placeholder="Task Name"  class="form-control">
-                <input type="text" aria-label="status" placeholder="Status"  class="form-control">
-                <!-- how to put in a toggler for status change? -->
-                </div>   
-   
-    <label for="additem">Add Item1</label>
-    <textarea class="form-control" id="additem" rows="3"></textarea>
+      
+        <div class="form-group">
+          <label for="Task">Task Name:</label> 
+          <!-- toggle switch -->
     
-    <label for="exampleFormControlTextarea1">Add Item2</label>   
-    <textarea class="form-control" id="additem" rows="3"></textarea>
+    <div class="custom-control custom-switch">            
+      <input type="checkbox" class="custom-control-input" id="customSwitches">
+      <label class="custom-control-label" for="customSwitches">to archive</label>  
+    </div>
+          <input type="text" class="form-control" id="task">
+        </div>
+                        
+  
 
-    <label for="additem">Add Item3</label>
-    <textarea class="form-control" id="additem" rows="3"></textarea>
+        <div class="form-group">
+          <label for="task-description">Task Description:</label>
+          <!-- <input type="text" class="form-control" id="task-description"> -->
+          <textarea class="form-control" id="task-description" rows="4"></textarea>
+ 
+        </div>
+        <div class="form-group">
+            <label for="assignee"> Assigned To:</label>
+            <input type="name" class="form-control" id="assignee">       
+        </div>
+        <div class="form-group">
+            <label for="duedate-t"> Due date:</label>
+            <input type="datetime" class="form-control" id="duedate-t" data-date-format="dd/mm/yyyy">       
+        </div>
+        <div class="form-group">
+            <label for="status">Task Status:</label>
+            <select class="form-control" id="status">
+              <option>To Do</option>
+              <option>In Progress</option>
+              <option>Review</option>
+              <option>Done</option>
+            </select>
+
    
-  </div>
- </div>
-</div>  
-<footer>
-<p><b>swipe for more-></b></p>
-</footer>
-</form>
-</div>
+
+          </div>
+          <div class="form-group">
+              <label for="Category"> Task Category </label>
+              <select class="form-control" id="Category">
+              <option>Work</option>
+              <option>Personel</option>
+              <option>Other</option>
+              </select>
+          </div>
+     
+
+      <div>
+      <a href="#homepage" class="btn btn-primary btn-default active" role="button" aria-pressed="true">Submit</a>
+      </div>
+
+      <footer>
+      <p><b>Swipe here for more -></b></p>
+      </footer>
+    </div>
+      </form>
+    </div>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
