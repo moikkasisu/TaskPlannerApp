@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Osten and Monica -->
+    <title>Team#4 TaskPlannerApp</title>
+  </head>
+
+  <body>
+    
+    <div class="container-fluid"></div>
+    <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top">
+      <a href="#" class="navbar-brand"><img src="#" alt="Task Planner"></a>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search task name" placeholder="Search Task" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse"><span class="navbar-toggler-icon"></span>
+     </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active"><a href="#homepage" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#todo" class="nav-link">To Do</a></li>
+        <li class="nav-item"><a href="#inprogress" class="nav-link">In Progress</a></li>
+        <li class="nav-item"><a href="#review" class="nav-link">Review</a></li>
+        <li class="nav-item"><a href="#done" class="nav-link">Done</a></li>
+      </ul>
+      </div>
+    </nav>
+     
+      
+    <h1>Form</h1>
+    <div class="mx-auto" style="width: 700px; padding-top: 20px">
+    <form action="/action_page.php">               
+    <h2 style="text-align: center">Task Planner</h2> 
+    
+      
+        <div class="form-group">
+          <label for="Task">Task Name:</label> 
+          <!-- toggle switch -->
+    
+    <div class="custom-control custom-switch">            
+      <input type="checkbox" class="custom-control-input" id="customSwitches">
+      <label class="custom-control-label" for="customSwitches">to archive</label>  
+    </div>
+          <input type="text" class="form-control" id="task">
+        </div>
+                        
+  
+
+        <div class="form-group">
+          <label for="task-description">Task Description:</label>
+          <!-- <input type="text" class="form-control" id="task-description"> -->
+          <textarea class="form-control" id="task-description" rows="4"></textarea>
+ 
+        </div>
+        <div class="form-group">
+            <label for="assignee"> Assigned To:</label>
+            <input type="name" class="form-control" id="assignee">       
+        </div>
+        <div class="form-group">
+            <label for="duedate-t"> Due date:</label>
+            <input type="datetime" class="form-control" id="duedate-t" data-date-format="dd/mm/yyyy">       
+        </div>
+        <div class="form-group">
+            <label for="status">Task Status:</label>
+            <select class="form-control" id="status">
+              <option>To Do</option>
+              <option>In Progress</option>
+              <option>Review</option>
+              <option>Done</option>
+            </select>
+
+   
+
+          </div>
+          <div class="form-group">
+              <label for="Category"> Task Category </label>
+              <select class="form-control" id="Category">
+              <option>Work</option>
+              <option>Personel</option>
+              <option>Other</option>
+              </select>
+          </div>
+     
+
+      <div>
+      <a href="#homepage" class="btn btn-primary btn-default active" role="button" aria-pressed="true">Submit</a>
+      </div>
+
+      <footer>
+      <p><strong>Swipe here for more -></strong></p>
+      </footer>
+    </div>
+      </form>
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  
+  </body>
+</html>

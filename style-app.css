@@ -1,0 +1,46 @@
+body {
+  color: rgb(61, 59, 122);
+  background: #d9eeee;
+  background: -webkit-linear-gradient(to top, #d5a0f8, #7a8cc5);
+  background: linear-gradient(to top, #d5a0f8, #7a8cc5));
+  padding-top: 50px;
+  }
+}
+
+
+footer{
+  color: teal;
+}
+
+.dropdown {
+  margin-left: 3rem
+}
+
+#modalTrigger {
+  margin-left: 1rem;
+}
+
+.modal-backdrop {
+  z-index: 1020;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: lightgrey
+}
+
+
+.modalContent {
+  background-color: lightslategray;
+  margin: 15% auto;
+  padding: 25px;
+  border: 1px solid black;
+  width: 90%;
+}
