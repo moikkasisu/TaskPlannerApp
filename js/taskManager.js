@@ -1,7 +1,7 @@
 //add an data-task-id attribute to each task
 
 const createTaskHtml = (id, taskName, description, assignedTo, emailAddress, dueDate, status) => `
-    <li class="list-group-item" data-task-id=${id}>
+    <li class="list-group-item" data-task-id= ${id}>
         <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
             <h5>${taskName}</h5>
             <span class="badge ${status === 'To Do' ? 'badge-danger' : 'badge-success'}">${status}</span>

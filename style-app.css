@@ -1,10 +1,12 @@
 body {
   color: rgb(61, 59, 122);
   background: #d9eeee;
-  background: -webkit-linear-gradient(to top, #d5a0f8, #7a8cc5);
-  background: linear-gradient(to top, #d5a0f8, #7a8cc5));
   padding-top: 50px;
-  }
+
+  /* when this is applied the gradient repats and looks bad maybe consider a different color or just a one color background:
+  background: -webkit-linear-gradient(to top, #d5a0f8, #7a8cc5);
+  background: linear-gradient(to top, #d5a0f8, #7a8cc5);
+  */
 }
 
 
@@ -17,11 +19,11 @@ footer{
 }
 
 #modalTrigger {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 
 .modal-backdrop {
-  z-index: 1020;
+  z-index: -1;
 }
 
 .modal {
@@ -33,14 +35,60 @@ footer{
   width: 100%;
   height: 100%;
   overflow: auto; 
-  background-color: lightgrey
+  background-color: slategrey;
+  text-align: center;
 }
 
 
-.modalContent {
-  background-color: lightslategray;
-  margin: 15% auto;
+.modal-body {
   padding: 25px;
   border: 1px solid black;
-  width: 90%;
+  width: 100%;
 }
+
+.btn-light {
+  margin-right: 10px;
+  text-align: center;
+}
+
+#navbarCategoryWork{
+  border-left-color: black;
+  border-left-width: 3px;
+  padding-left: 20px;
+}
+
+hr.vertical{
+  background-color: black;
+  height: 3px;
+}
+
+.form-row{
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+/* Commented out ATM
+ Style the buttons that are used to open and close the accordion panel 
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+ Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) 
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default 
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+} */
