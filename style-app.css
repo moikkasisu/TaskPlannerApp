@@ -2,11 +2,6 @@ body {
   color: rgb(61, 59, 122);
   background: #d9eeee;
   padding-top: 50px;
-
-  /* when this is applied the gradient repats and looks bad maybe consider a different color or just a one color background:
-  background: -webkit-linear-gradient(to top, #d5a0f8, #7a8cc5);
-  background: linear-gradient(to top, #d5a0f8, #7a8cc5);
-  */
 }
 
 
