@@ -125,10 +125,11 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-sm-12 md-3">
-                <label for="modaltaskname">Task Name:</label>
-                <input id="modaltaskname" type="text" class="form-control" minlength="9" required>
-
-                  <!-- Error -->
+                <label for="taskname">Task Name: <small>(more than 8 characters excl.space)&nbsp;</small>  </label><span class="badge badge-pill badge-dark">New</span> 
+         
+    <input id="taskname" type="text" class="form-control" minlength="9" required>
+   
+                      <!-- Error -->
                   <div class="help-block with-errors"> <!-- IDK if this removes verification </div> --> 
                     <div class="invalid-feedback">
                       You must enter a task name (longer than 8 characters).
@@ -183,12 +184,12 @@
                 </div>
                 
                 <div class="col-sm-8 md-3">
-                  <label for="modalemailAssignee"> Assignee Email Address (Optional):</label>
-                  <input type="email" class="form-control" placeholder="Email Address" id="modalemailAssignee" required>
+                  <label for="emailAssignee"> Assignee Email Address (optional)</label>
+                  <input type="text" class="form-control" placeholder="Email Address" id="emailAssignee"> 
                   <div class="invalid-feedback">
                     Please enter a valid email address.
                   </div>
-                  
+                                    
                   <!-- Error -->
                   
                   <div class="help-block with-errors"> <!-- </div> -->
