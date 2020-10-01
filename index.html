@@ -121,7 +121,7 @@
       </div>
      
       <div class="modal-body">
-        <form id= "modalnewTaskForm" class="needs-validation" novalidate>
+        <form id= "modalnewTaskForm" class="needs-validation">
           <div class="form-group">
             <div class="form-row">
               <div class="col-sm-12 md-3">
@@ -134,24 +134,14 @@
                       You must enter a task name (longer than 8 characters).
                     </div>
                   </div>
-                </div>
-                
-                <!-- ID IS AUTOMATIC WITHIN JS 
-                  <div class="col-sm-4 md-3">
-                    <label for="taskid">Task ID:</label>
-                    <input style="background-color: #dfe6e6; border-color:#d6dbdb" type="number" id="taskid" min=1 max=999/>
-                  </div>
-                </div>
-              </div>  
-             -->
-            
+                </div>           
             </div>
             
             <div class="form-group">
               <div class="form-row">
                 <div class="col-sm-6 md-3">
-                  <label for="lastsaved"> Date of Entry as Start Date:</label>
-                  <input type="datetime" class="form-control" id="lastsaved">
+                  <label for="modallastsaved"> Date of Entry as Start Date:</label>
+                  <input type="datetime" class="form-control" id="modallastsaved">
                 </div>
                 
                 <div class="col-sm-6 md-3">
@@ -246,19 +236,7 @@
               </div>
             </div>
           </div>
-          
-          <!-- CHECK / TICK BOX CODE FOR A IM NOT A ROBOT:  
-            <div class=form-group>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-              <label class="form-check-label" for="invalidCheck">
-                Please Confirm You Are Not a Robot
-              </label>
-              <div class="invalid-feedback">
-                You must confirm before submitting.
-              </div>
-            </div>
-          </div>  -->
+                  
 
       <div class="modal-footer d-flex justify-content-between ">
       <button type="button" class="btn btn-danger" data-dismiss="modal" id="modalFormClose">Close</button>
@@ -273,151 +251,9 @@
 <!-- Modal HTML end -->
 
 <!-- FORM OLD CODE: WAS A DUPLICATE OF THE FORM ABOVE, POSSIBLY ENTIRE DELETION:
-     Monica's Original Form Home Page 
+     Monica's Original Form Home Page -->
     
-    <form class="needs-validation" id= "newTaskForm" novalidate>
-    <form class="needs-validation" id="newTaskForm" novalidate >
-    <div class="form-row">
-    <div class="mx-auto" style="width: 700px; padding-top: 30px">
-    <form action="/action_page.php">
-           
-    <div class="form-group">
-    <div class="form-row">
-    <div class="col-sm-8 md-3">
-      <label for="taskname">Task Name:</label> 
-          * toggle switch *
-        <div class="custom-control custom-switch">            
-          <input type="checkbox" class="custom-control-input" id="customSwitches">
-            <label class="custom-control-label" for="customSwitches">to archive</label>  
-        </div>
-    <input id="taskname" type="text" class="form-control" minlength="9" required>
    
-       Error
-     <div class="help-block with-errors"></div>
-        <div class="invalid-feedback">
-            You must enter a task name (longer than 8 characters).
-          </div>
-        </div>
-
-         Commented this out as it is not needed within the form element
-      <div class="col-sm-4 md-3">
-         <label for="taskid">Task ID:</label> 
-          <input style="background-color: #dfe6e6; border-color:#d6dbdb" type="number" id="taskid" min=1 max=999/>       
-      </div> 
-      </div>
-    </div>  
-      
-         <div class="form-group">
-          <div class="form-row">
-          <div class="col-sm-6 md-3">
-          <label for="lastsaved"> Date of Entry as Start Date:</label>
-          <input type="datetime" class="form-control" id="lastsaved">            
-          </div>
-          
-          <div class="col-sm-6 md-3">
-          <label for="taskDuedate"> Due Date:</label>
-          <input type="date" class="form-control" id="taskDuedate" data-date-format="dd/mm/yyyy" required>   
-          <div class="invalid-feedback">
-            Please pick a valid date (DD/MM/YYYY).
-          </div> 
-         Error
-         <div class="help-block with-errors"></div>
-         </div>
-         </div>
-        
-                     
-  
-         <div class="form-group">
-          <label for="taskDescr">Task Description:</label>
-           <input type="text" class="form-control" id="task-description">
-          <textarea class="form-control" id="taskDescr" rows="3" minlength="16" required></textarea>
-          <div class="invalid-feedback">
-            Please enter description (longer than 15 characters).
-          </div>
-            Error
-          <div class="help-block with-errors"></div>
-        </div>
-            
-
-        <div class="form-group">
-        <div class="form-row">
-        <div class="col-sm-4 md-3">
-            <label for="taskAssignedTo">Assigned to Name</label>
-              <input type="text" class="form-control" name="username" minlength="9"  pattern="^[a-zA-Z0-9_.-]*$" id="taskAssignedTo"  placeholder="username" required>          
-               Error 
-              <div class="help-block with-errors"></div>
-              <div class="invalid-feedback">
-                Please enter a valid name (more than 8 characters).
-              </div> 
-            </div>
-        <div class="col-sm-8 md-3">
-              <label for="emailAssignee"> Assignee Email Address (Optional):</label>
-            <input type="email" class="form-control" placeholder="Email Address" id="emailAssignee" required> 
-            <div class="invalid-feedback">
-              Please enter a valid email address.
-            </div>    
-          Error
-         <div class="help-block with-errors"></div>
-        </div>
-      </div>
-    </div>
-
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-sm-6 md-3">
-            <label for="status">Task Status:</label>
-            <select class="custom-select" id="status" required>
-             <div class="invalid-feedback">
-                Please make a selection.
-              </div>
-              <option selected disabled value="">Choose...</option>
-              <option>To Do</option>
-              <option>In Progress</option>
-              <option>Review</option>
-              <option>Done</option>
-            </select>
-            Error
-           <div class="help-block with-errors"></div>
-          </div>
-             
-
-          <div class="col-sm-6 md-3">
-              <label for="category"> Task Category </label>
-              <select class="custom-select" id="category" required>
-               <div class="invalid-feedback">
-                Please make a selection.
-                </div>
-              <option selected disabled value="">Choose...</option>
-              <option>Work</option>
-              <option>Personel</option>
-              <option>Other</option>
-              </select>
-                    Error 
-          <div class="help-block with-errors"></div>
-            </div>
-            </div>
-          </div>
-         
-     
-         <div class="form-group">
-         
-          <div class=form-group>
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-            Please Confirm You Are Not a Robot
-            </label>
-            <div class="invalid-feedback">
-              You must confirm before submitting.
-            </div>
-          </div>
-        </div>
-     <button class="btn btn-primary" type="submit" id="formSubmit">Add Task</button>
-    </div>
-  </div> 
-    </form>
-     </form>
-</div> -->
   
 <!-- Task output area -->
 <div class="bg-light"> <!-- TRANSFER TO CSS AND I BELIEVE DEAFULT WIDTH IS 100% style="width: 100%; margin-top: 2rem"> -->
