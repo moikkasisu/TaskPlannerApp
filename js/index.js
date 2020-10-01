@@ -16,7 +16,7 @@ taskDueDate.min = new Date().toISOString().split("T")[0];
 function myFunction() {
 let x = document.createElement("input");
 x.setAttribute("type", "date");
-x.setAttribute("value", field);
+x.setAttribute("value", taskDueDate);
 document.body.appendChild(x);
 }
 
@@ -88,7 +88,7 @@ taskDueDate.classList.remove("is-valid");
 
 
 //  email address is optional, but if not empty, needs to be valid
-const emailAssignee = document.querySelector('#emailAssignee')
+const emailAssignee = document.querySelector('#modalemailAssignee')
 const emailAddress = emailAssignee.value;
 const pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 // const pattern = /^[^]+@[^]+\.[A-Z]{2,3}$/;
@@ -171,7 +171,7 @@ tasksList.addEventListener('click', (e) => {
 // check if "Delete" button was clicked
 if (e.target.classList.contains("delete-button")) {
   // get parent task
-  const parentTask = e.target.parentElement;
+  const parentTask = e.target.parentElement.parentElement;
   // get taskId of parent task
   const taskID = Number(parentTask.dataset.taskID);
   // delete the task
@@ -187,16 +187,7 @@ if (e.target.classList.contains("delete-button")) {
 
 // // validation of Modal Form using bootstrap
 
-// //modaltaskDuedate
-// const modalfield = document.querySelector('#modaltaskDuedate');
-// modalfield.min = new Date().toISOString().split("T")[0];
 
-// function modalFunction() {
-// const xx = document.createElement("input");
-// xx.setAttribute("type", "date");
-// xx.setAttribute("value", modalfield);
-// document.body.appendChild(xx);
-// }
 
 // (function() {
 //   'use strict';

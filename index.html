@@ -125,12 +125,12 @@
           <div class="form-group">
             <div class="form-row">
               <div class="col-sm-12 md-3">
-                <label for="taskname">Task Name: <small>(more than 8 characters excl.space)&nbsp;</small>  </label><span class="badge badge-pill badge-dark">New</span> 
-         
-    <input id="taskname" type="text" class="form-control" minlength="9" required>
+                <label for="modaltaskname">Task Name: <small>(more than 8 characters excl.space)&nbsp;</small>  </label><span class="badge badge-pill badge-success">NEW</span>         
+    <input id="modaltaskname" type="text" class="form-control" minlength="9" required>
    
                       <!-- Error -->
-                  <div class="help-block with-errors"> <!-- IDK if this removes verification </div> --> 
+                  <div class="help-block with-errors"></div> 
+                <!-- Comment:  IDK if this removes verification  -  No, it doesn't-->
                     <div class="invalid-feedback">
                       You must enter a task name (longer than 8 characters).
                     </div>
@@ -143,7 +143,8 @@
                 <div class="col-sm-6 md-3">
                   <label for="modallastsaved"> Date of Entry as Start Date:</label>
                   <input type="datetime" class="form-control" id="modallastsaved">
-                </div>
+                </div> 
+                <!-- you don't need enter anything for date of entry -->
                 
                 <div class="col-sm-6 md-3">
                   <label for="modaltaskDuedate"> Due Date:</label><input type="date" class="form-control" id="modaltaskDuedate" data-date-format="dd/mm/yyyy" required>
@@ -159,14 +160,13 @@
               
               <div class="form-group">
                 <label for="modaltaskDescr">Task Description:</label>
-                <!-- <input type="text" class="form-control" id="task-description"> -->
-                <textarea class="form-control" id="modaltaskDescr" rows="3" minlength="16" required></textarea>
+               <textarea class="form-control" id="modaltaskDescr" rows="3" minlength="16" required></textarea>
+                  <!-- Error -->
+               <div class="help-block with-errors"></div>
                 <div class="invalid-feedback">
                   Please enter description (longer than 15 characters).
+                </div>              
                 </div>
-                 <!-- Error -->
-                <div class="help-block with-errors"></div>
-              </div>
                   
       
               <div class="form-group">
@@ -176,23 +176,25 @@
                     <input type="text" class="form-control" name="username" minlength="9"  pattern="^[a-zA-Z0-9_.-]*$" id="modaltaskAssignedTo"  placeholder="username" required>          
                     
                     <!-- Error -->
-                    <div class="help-block with-errors"> <!-- </div> --> 
+                    <div class="help-block with-errors"> </div>  
+                    <!-- hi, please don't comment out this '</div>' -->
                     <div class="invalid-feedback">
                       Please enter a valid name (more than 8 characters).
                     </div> 
                   </div>
-                </div>
+                
                 
                 <div class="col-sm-8 md-3">
-                  <label for="emailAssignee"> Assignee Email Address (optional)</label>
-                  <input type="text" class="form-control" placeholder="Email Address" id="emailAssignee"> 
+                  <label for="modalemailAssignee"> Assignee Email Address (optional)</label>
+                  <input type="text" class="form-control" placeholder="Email Address" id="modalemailAssignee"> 
                   <div class="invalid-feedback">
                     Please enter a valid email address.
                   </div>
                                     
                   <!-- Error -->
                   
-                  <div class="help-block with-errors"> <!-- </div> -->
+                  <div class="help-block with-errors"> </div>
+                      <!-- hi, please don't comment out this '</div>' -->
                   </div>
                 </div>
               </div>
@@ -262,6 +264,8 @@
       Tasks List
     </div>
     <ul class="list-group list-group-flush" id="tasksList">
+
+
       <!-- JS VALUES SHOULD SHOULD INSERT HERE: --> 
 
       <!-- FORMAT -> EXAMPLE FURTHER WORK NEEDED ON ACCORDIAN:
