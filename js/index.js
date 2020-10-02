@@ -16,7 +16,7 @@ taskDueDate.min = new Date().toISOString().split("T")[0];
 function myFunction() {
 let x = document.createElement("input");
 x.setAttribute("type", "date");
-x.setAttribute("value", taskDueDate);
+// x.setAttribute("value", taskDueDate);
 document.body.appendChild(x);
 }
 
@@ -28,6 +28,7 @@ const emailAssignee = document.querySelector('#modalemailAssignee')
 const taskStatus = document.querySelector('#modalstatus')
 const taskCategory = document.querySelector('#modalcategory')
 
+  
 
  // create a checkForm function to validate fields in the form
     let checkForm = function(e) {
@@ -57,24 +58,20 @@ const taskCategory = document.querySelector('#modalcategory')
     };
 
 
-    // taskDueDate: calendar preset to choose from/after today's date, if nothing is choosen, show error messgae  
-  isFutureDate=()=>{
-  let today = new Date().getTime(),
-  idate = idate.split("/");
+    // taskDueDate: calendar preset to choose from/after today's date, if nothing is choosen, show error messgae     
 
-  idate = new Date(idate[2], idate[1] - 1, idate[0]).getTime();
- 
-  if ((today - idate) <= 0){
-    
-taskDueDate.classList.add("is-valid");
-taskDueDate.classList.remove("is-invalid");
-  }
-  else
-  {    
-taskDueDate.classList.add("is-invalid");
-taskDueDate.classList.remove("is-valid");
-  }
-}
+      let today = new Date().setUTCHours(0,0,0,0)
+      let pickedDate = new Date (taskDueDate.value).setUTCHours(0,0,0,0)
+         if (pickedDate >= today) {
+        taskDueDate.classList.add("is-valid");
+        taskDueDate.classList.remove("is-invalid");
+          }
+          else
+          {      
+        taskDueDate.classList.add("is-invalid");
+        taskDueDate.classList.remove("is-valid");
+          }                
+  
 
    // assigned to should not be empty and longer than 8 characters
   if (taskAssignedTo.value.length >= 8) {
@@ -88,7 +85,7 @@ taskDueDate.classList.remove("is-valid");
 
 
 //  email address is optional, but if not empty, needs to be valid
-const emailAssignee = document.querySelector('#modalemailAssignee')
+// const emailAssignee = document.querySelector('#modalemailAssignee')
 const emailAddress = emailAssignee.value;
 const pattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 // const pattern = /^[^]+@[^]+\.[A-Z]{2,3}$/;
@@ -106,26 +103,24 @@ if (emailAddress.match(pattern)) {
    emailAssignee.classList.remove("is-valid");
    emailAssignee.classList.add("is-invalid");
     }       
-
   }
+  
 document.querySelector("#modalnewTaskForm").addEventListener("keyup", checkForm); 
 
-// document.getElementById("modalformSubmit").addEventListener('click', TaskMgr.addTask, false);
-
- console.warn(`added new task, ID: ${TaskMgr.currentID}`);
+console.warn(`added new task, Id: ${TaskMgr.currentId}`);
 
 const form1= document.querySelector('#modalnewTaskForm');
 form1.addEventListener('submit', (e)=>{
   // prevent default action firing
   e.preventDefault();
-  const taskName = taskname.value;
-  const description = taskDescr.value;
-  const assignedTo = taskAssignedTo.value;
-  const dueDate = taskDueDate.value;
-  const emailAddress = emailAssignee.value;
-  const status= taskStatus.value;
-  const category = taskCategory.value
-  
+  let taskName = taskname.value;
+  let description = taskDescr.value;
+  let assignedTo = taskAssignedTo.value;
+  let dueDate = taskDueDate.value;
+  let emailAddress = emailAssignee.value;
+  let status= taskStatus.value;
+  let category = taskCategory.value
+    
      // add entered task form data to taskmanager
    TaskMgr.addTask(taskName, description, assignedTo, dueDate);
    console.log(TaskMgr);
@@ -146,26 +141,32 @@ form1.addEventListener('submit', (e)=>{
   emailAssignee.value = '';
   taskStatus.value = '';
   taskCategory.value = '';
+
+   // close the modal by toggling
+   $("#addTaskModal").modal("toggle");
+  //  $('.collapse').collapse("toggle");
 });
 
 // // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
   
 // Add an 'onclick' event listener to the Tasks List
-tasksList.addEventListener('click', (e) => {
+tasksList.addEventListener("click", (e) => {
   // Check if a "Mark As Done" button was clicked
-  if (e.target.classList.contains('done-button')) {
-      // Get the parent Task
-      const parentTask = e.target.parentElement.parentElement;
-
-      // Get the taskId of the parent Task.
-      const taskID = Number(parentTask.dataset.taskID);
-
-      // Get the task from the TaskManager using the taskId
-      const task = TaskMgr.getTaskById(taskID);
-
-      // Update the task status to 'DONE'
-      task.status = 'DONE'; 
+  if (e.target.classList.contains("done-button")) {
+    // Get the parent Task
+    const parentTask = e.target.parentElement.parentElement;
+    // Get the taskId of the parent Task.
+    const taskId = Number(parentTask.dataset.taskId);
+    // Get the task from the TaskManager using the taskId
+    const task = TaskMgr.getTaskById(taskId);
+   // Update the task status to 'DONE'
+    task.status = "DONE";
+    console.log(task.status);
+      // save the task to localStorage
+  TaskMgr.save();
+  // render tasks
+  TaskMgr.render();
   };
 
 // check if "Delete" button was clicked
@@ -173,40 +174,15 @@ if (e.target.classList.contains("delete-button")) {
   // get parent task
   const parentTask = e.target.parentElement.parentElement;
   // get taskId of parent task
-  const taskID = Number(parentTask.dataset.taskID);
+  const taskId = Number(parentTask.dataset.taskId);
   // delete the task
-  TaskMgr.deleteTask(taskID);
+  TaskMgr.deleteTask(taskId);
   // save the task to localStorage
   TaskMgr.save();
   // render tasks
   TaskMgr.render();
 }
 });
-
-
-
-// // validation of Modal Form using bootstrap
-
-
-
-// (function() {
-//   'use strict';
-//   window.addEventListener('load', function() {
-//     // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//     var modalforms = document.getElementsByClassName('needs-validation');
-//     // Loop over them and prevent submission
-//     var modalvalidation = Array.prototype.filter.call(modalforms, function(formNew) {
-//       formNew.addEventListener('submit', function(ev) {
-//         if (formNew.checkValidity() === false) {
-//           ev.preventDefault();
-//           ev.stopPropagation();
-//         }
-//         formNew.classList.add('was-validated');
-//       }, false);
-//     });
-//   }, false);
-// })();
-
 
 
 //ACCORDIAN FUNCTIONS - Commented out ATM

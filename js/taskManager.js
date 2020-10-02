@@ -13,24 +13,23 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
           </div>
           <p>${description}</p>
           <div class="d-flex w-100 justify-content-end">
-              <button class="btn btn-outline-success done-button ${status === 'To Do' ? 'visible' : 'invisible'}">Mark As Done</button>
-          </div>
+        <button type="button" class="btn btn-outline-success mr-1 done-button ${status === 'To Do' ? 'visible' : 'invisible'}"> Mark As Done </button>
+        <button type="button" class="btn btn-danger btn-sm rounded-0 delete-button" data-toggle="tooltip" data-placement="top" title="Delete"> Delete </button>
+        </div>
       </li>
   `
   }
   
-  
-  console.log(createTaskHtml()); // test to see
-  
+ 
   
   // function createTaskHtml (taskHtml) { return taskHtml}
   
   class TaskManager {
     // Set up the tasks and currentId=0
-    constructor (currentID=0) {
+    constructor (currentId=0) {
         this.tasks = [];
   
-        this.currentID = currentID;
+        this.currentId = currentId;
   
         // this.addTask();
   
@@ -39,8 +38,8 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
      // create the addTask method
    addTask(taskName, description, assignedTo, dueDate) {
         const task = {
-       // Increment the currentID property
-       id: this.currentID++,
+       // Increment the currentId property
+       id: this.currentId++,
        taskName: taskName,
        description: description,
        assignedTo: assignedTo,
@@ -54,7 +53,7 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
   
   
      // Create the deleteTask method
-     deleteTask(taskID){
+     deleteTask(taskId){
       const newTasks = [];
   
       // Loop over the tasks
@@ -63,7 +62,7 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
           const task = this.tasks[i];
   
           // Check if the task id is not the task id passed in as a parameter
-          if (task.id !== taskID) {
+          if (task.id !== taskId) {
               // Push the task to the newTasks array
               newTasks.push(task);
           }
@@ -74,16 +73,16 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
   }
   
   
-    getTaskById (taskID){
+    getTaskById (taskId){
       let foundTask;
       // Loop over the tasks and find the task with the id passed as a parameter
       for (let j = 0; j < this.tasks.length; j++) {
           // loop through the tasks in the array
           const taskitem = this.tasks[j];
           
-          // when task's id matches the required ID/parameter, store the task in the a variable called foundTask
-          if (taskitem.id === taskID) {
-           foundTask = taskitem; 
+          // when task's id matches the required Id/parameter, store the task in the a variable called foundTask
+          if (taskitem.id === taskId) {
+         foundTask = taskitem; 
           }
           }
        return foundTask;
@@ -134,10 +133,10 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
       localStorage.setItem('tasks', tasksJson);
   
       // Convert the currentId to a string;
-      const currentID = String(this.currentID);
+      const currentId = String(this.currentId);
   
       // Store the currentId in localStorage
-      localStorage.setItem('currentID', currentID);
+      localStorage.setItem('currentId', currentId);
   }
   
   // Create the load method
@@ -152,12 +151,12 @@ const createTaskHtml = (id, taskName, description, assignedTo, dueDate, status) 
       }
   
       // Check if the currentId is saved in localStorage
-      if (localStorage.getItem('currentID')) {
+      if (localStorage.getItem('currentId')) {
           // Get the currentId string in localStorage
-          const currentID = localStorage.getItem('currentID');
+          const currentId = localStorage.getItem('currentId');
   
           // Convert the currentId to a number and store it in our TaskManager
-          this.currentID = Number(currentID);
+          this.currentId = Number(currentId);
       }
   }
   }
