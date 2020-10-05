@@ -1,5 +1,5 @@
 # TaskPlannerApp :high_brightness:
- Team Project of Pod1-Team4 (names withheld from public disclosure), 
+ Team Project of Pod1-Team4 (names withheld from public disclosure),\ 
  detailed instructions (tasks 6-11) are per [https://github.com/Nicktho/genxi-jwd-final-project]
 
 # _The Setup_
