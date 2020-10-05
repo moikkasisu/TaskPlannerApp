@@ -1,5 +1,6 @@
 # TaskPlannerApp :high_brightness:
- Team Project of Pod1-Team4 (names withheld from public disclosure),  detailed instructions (tasks 6-11) are per [https://github.com/Nicktho/genxi-jwd-final-project]
+ Team Project of Pod1-Team4 (names withheld from public disclosure):  
+ detailed instructions (tasks 6-11) are per https://github.com/Nicktho/genxi-jwd-final-project
 
 # _The Setup_
 Re-organise folder structure in preparation for the next few steps.
