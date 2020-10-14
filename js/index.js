@@ -149,7 +149,7 @@ form1.addEventListener('submit', (e)=>{
 
 // // Select the Tasks List
 const tasksList = document.querySelector('#tasksList');
-  
+ 
 // Add an 'onclick' event listener to the Tasks List
 tasksList.addEventListener("click", (e) => {
   // Check if a "Mark As Done" button was clicked
@@ -183,18 +183,3 @@ if (e.target.classList.contains("delete-button")) {
   TaskMgr.render();
 }
 });
-
-
-//ACCORDIAN FUNCTIONS - Commented out ATM
- // let acc = document.querySelector(".accordian");
-  //let i;
-
-  //for (i = 0; < acc.length; i++) {
-    //acc[i].addEventListener('click', function() {
-      //this.classList.toggle("active");
-      //let panel = this.nextElementSibling;
-      //if (panel.style.display === 'block'){
-        //panel.style.display = "none";
-      //} else panel.style.display = "block";
-    //});
-  //}
