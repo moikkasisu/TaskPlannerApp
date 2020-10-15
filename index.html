@@ -19,7 +19,8 @@
       <nav class="navbar navbar-light bg-light navbar-expand-lg fixed-top d-flex justify-content-between">
         <a href="#" class="navbar-brand"><img src="https://icon-library.com/images/phone_app_outline_clock-512.png" width="40" alt="app logo">Task Planner App</a> <!-- (MINOR) Think of Task App Name?  I think it should mention Pod1 Team 4-->
 
-        <!-- <form class="form-inline">
+        <!-- Search box removed because we want a cleaner NAV
+          <form class="form-inline">
           <input id='theSearch' type="search" class="form-control mr-sm-2"  placeholder="Enter search term" aria-label="Enter a search term containing at least one alphanumeric character" autocomplete="off">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             <p id="searchout"></p>
@@ -30,13 +31,6 @@
           </button>
           
           <div class="collapse navbar-collapse" id="navbarCollapse">
-          <!-- SAVING SPACE BY REMOVING A MENU ITEM AND TRANSFERRING ITS PROPERTIES / PURPOSE INTO THE TITLE WHICH IS PREEXISTING WITHIN THE NAVBAR
-            <div class="navBarElement">
-              <button type="button" class="btn btn-light bg-light" id="navbarHome">  Home is our switched to the brand button:
-                All:
-              </button>
-            </div> -->
-
             <div class="navBarElement">
               <button type="button" class="btn btn-light bg-light" id="navbarToDo">
                 To do:
@@ -61,7 +55,7 @@
               </button>
             </div>
 
-            <!-- Vetical between Status and Categories-->
+            <!-- Vetical line between Status and Categories-->
              <hr class="vertical"/>
 
             <div class="navBarElement">
@@ -82,38 +76,21 @@
               </button>
             </div>
 
-            
-              
-            <!-- Button trigger modal added to navbar-->
+            <!-- Button trigger modal added to navbar this attachs to a form modal instead of an serperate page form -->
             <div class="navBarElement">
               <button id="modalTrigger" type="button" class="btn btn-primary text-right" data-toggle="modal" data-target="#addTaskModal">
                 <strong style="content:\002B">New Task &#43; </strong>
               </button>
             </div>
-
           </div>
         </div>
       </nav>
     </div>
 
-    <!-- NAVBAR HTML END -->
-
-    <!-- This is orginal version... (Kept in if monica wants to switch back)
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="#homepage" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#todo" class="nav-link">To Do</a></li>
-            <li class="nav-item"><a href="#inprogress" class="nav-link">In Progress</a></li>
-            <li class="nav-item"><a href="#review" class="nav-link">Review</a></li>
-            <li class="nav-item"><a href="#done" class="nav-link">Done</a></li>
-            FORM
-          </ul>
-        </div> --> 
-
 <!-- Modal HTML start -->
 <div class="modal" id="addTaskModal" role="dialog" tabindex="-1" aria-labelledby="addTaskModalLabel" aria-hidden="true">
-  <div> <!-- class="modal-dialog modal-dialog-scrollable"> -->
+  <div>
     <div class="modal-content">
-
       <div class="modal-header">
         <h6 class="modal-title" id="addTaskModalLabel">New Task Form</h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -127,7 +104,7 @@
             <div class="form-row">
               <div class="col-sm-12 md-3">
                 <label for="modaltaskname">Task Name: <small>(more than 8 characters excl.space)&nbsp;</small>  </label><span class="badge badge-pill badge-success">NEW</span>         
-    <input id="modaltaskname" type="text" class="form-control" minlength="9" required>
+                  <input id="modaltaskname" type="text" class="form-control" minlength="9" required>
    
                       <!-- Error -->
                   <div class="help-block with-errors"></div> 
@@ -158,7 +135,7 @@
                     </div>                  
                   </div>
                 </div>
-              </div>
+            </div>
               
               <div class="form-group">
                 <label for="modaltaskDescr">Task Description:</label>
@@ -168,7 +145,7 @@
                 <div class="invalid-feedback">
                   Please enter description (longer than 15 characters).
                 </div>              
-                </div>
+              </div>
                   
       
               <div class="form-group">
@@ -251,17 +228,10 @@
 </div>
 </div>
 </div>
-</div>
-</div>
 <!-- Modal HTML end -->
-
-<!-- FORM OLD CODE: WAS A DUPLICATE OF THE FORM ABOVE, POSSIBLY ENTIRE DELETION:
-     Monica's Original Form Home Page -->
-    
-   
   
 <!-- Task output area -->
-<div class="bg-light"> <!-- TRANSFER TO CSS AND I BELIEVE DEAFULT WIDTH IS 100% style="width: 100%; margin-top: 2rem"> -->
+<div class="bg-light"> 
     <div class="card-header bg-primary" style="color: white">
      All Tasks List
     </div>
@@ -269,28 +239,7 @@
     </ul>
      
    </div>
-
-
-      <!-- JS VALUES SHOULD SHOULD INSERT HERE: --> 
-
-      <!-- FORMAT -> EXAMPLE FURTHER WORK NEEDED ON ACCORDIAN:
-      Inserted example code if time permits of the output as a reference point
-
-  <button class ="accordion"> ${TaskName} + ${Category} + ${Status} (as a form selector, status on the right side of this button) </buttton>
-  <div class="panel">
-
-    <ul>
-      <li>1</li>
-      <li>3 </li>
-      <li>2</li>
-
-      Possibly look using template literals: 
-      <li> This task ${TaskName} is assigned to ${AssignedTo} <a href = "mailto: ${AssigneeEmail}.com  > Email </a> </li>
-      <li> Task Descriptions: {$TaskDescription}` " </li>
-      <li> This task was started on ${StartDate} and the deadline for this task is ${dueDate} </li> 
-    </ul>
-      
-    </div> -->  
+    <!-- JS VALUES SHOULD SHOULD INSERT HERE: --> 
 
   <!-- JAVASCRIPT -->
   <script src="js/taskManager.js"></script>
